@@ -124,9 +124,14 @@ background-color: #6c8cff;
 }
 
 .loader {
+  display: block;
   text-align: center;
   margin: 20px 0;
   font-weight: 500;
+}
+
+.loader::after {
+  content: "Loading images, please wait...";
 }
 
 .is-hidden {
