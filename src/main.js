@@ -46,9 +46,17 @@ form.addEventListener("submit", async event => {
 
     createGallery(data.hits);
 
-    if (totalHits > 15) {
+    const perPage = 15;
+
+    if (totalHits > perPage) {
       showLoadMoreButton();
+    } else {
+      iziToast.info({
+        message:
+          "We're sorry, but you've reached the end of search results.",
+      });
     }
+
   } catch {
     iziToast.error({ message: "Something went wrong!" });
   } finally {
